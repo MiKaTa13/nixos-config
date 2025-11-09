@@ -1,0 +1,13 @@
+diff --git a/config.def.h b/config.def.h
+index 1a0b00b..81059a6 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -5,7 +5,7 @@
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+-static char *font = "FiraCode:pixelsize=15:antialias=true:autohint=true:style=Regular";
++static char *font = "FiraCode:pixelsize=15:antialias=false:autohint=false:style=Regular";
+ static int borderpx = 15;
+ 
+ /*
