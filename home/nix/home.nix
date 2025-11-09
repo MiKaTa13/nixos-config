@@ -33,7 +33,7 @@
     ./modules/mpv.nix
     # ./modules/qutebrowser.nix
     ./modules/xsession.nix
-    ./modules/ghostty.nix
+    # ./modules/ghostty.nix
     ./modules/service_picom.nix
     ./modules/service_gpg.nix
     ./modules/service_redshift.nix
@@ -72,6 +72,7 @@
       qutebrowser
       fzf
       gimp3
+      ghostty
       age
     ]);
 }
