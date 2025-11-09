@@ -37,16 +37,19 @@
             # Enable home-manager integration in NixOS config
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup"; # move existing files by appending the "backup".
             home-manager.users = {
               ${username} = import ./home/${username}/home.nix;
             };
             home-manager.extraSpecialArgs = {
-              inherit username agenix pkgs-unstable;
+              inherit username agenix; 
+              inherit pkgs-unstable; # Allow use unstable packages in home.
             };
           }
         ];
         specialArgs = {
-          inherit username pkgs-unstable;
+          inherit username;
+          inherit pkgs-unstable; # Allow use unstable packages in system.
         };
       };
     };
