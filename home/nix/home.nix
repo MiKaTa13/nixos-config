@@ -12,7 +12,7 @@
   };
   systemd.user.startServices = "sd-switch";
   imports = [
-    ./modules/msmtp.nix
+    ./modules/lf.nix
     ./modules/msmtp.nix
     ./modules/notmuch.nix
     ./modules/offlineimap.nix
@@ -26,7 +26,6 @@
     ./modules/vim.nix
     ./modules/shell.nix
     ./modules/tmux.nix
-    ./modules/ollama.nix
     ./modules/zathura.nix
     ./modules/nnn.nix
     ./modules/neovim.nix
@@ -58,10 +57,8 @@
       ripgrep
       tree
       w3m
-      python3
       fd
       nsxiv
-      ffmpeg
       xclip
       offlineimap
       yubikey-manager
@@ -70,7 +67,7 @@
       agenix.packages.x86_64-linux.default
 
       ## Note About Using home-manager Command ##
-      # Even with home-manager in your PATH, 
+      # Even with home-manager in your PATH,
       # when using the NixOS module integration:
       # Don't use home-manager switch - it will conflict
       # Do use sudo nixos-rebuild switch for applying changes
@@ -89,5 +86,8 @@
       fzf
       gimp3
       age
+      nvitop
+      python3
+      ffmpeg
     ]);
 }

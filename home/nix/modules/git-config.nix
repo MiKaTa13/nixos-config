@@ -9,7 +9,7 @@
         light = false; # Set to true for light terminal backgrounds
         side-by-side = true;
         line-numbers = true;
-        syntax-theme = "Dracula"; # or "GitHub", "Monokai", etc.
+        syntax-theme = "Nord";
       };
     };
     userEmail = "nix@nomail.com";

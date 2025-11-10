@@ -42,7 +42,7 @@ in {
           elif '..' in secret or '/' in secret or '\\' in secret:
               raise ValueError(f"Path traversal detected in secret name: {secret}")
 
-          encrypted_secret_path = "/home/nix/.config/home-manager/secrets"
+          encrypted_secret_path = "/nix-config/home/nix/secrets"
           result = subprocess.run(["agenix", "-d", secret],
                                   cwd=encrypted_secret_path,
                                   capture_output=True,

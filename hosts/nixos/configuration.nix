@@ -12,6 +12,7 @@
     ./os_modules/nvidia-gpu.nix
     ./os_modules/services.nix
     ./os_modules/firejail.nix
+    ./os_modules/ollama.nix
   ];
 
   # rtkit (optional, recommended) allows Pipewire to use the realtime scheduler for increased performance.
@@ -85,6 +86,18 @@
     xterm
     git
   ];
+
+  # Config path
+  environment.variables = {
+    XDG_CONFIG_HOME = "$HOME/.config";
+  };
+
+  # Mount HDD at boot.
+  fileSystems."/mnt/hdd500" = {
+    device = "/dev/disk/by-uuid/6645a581-3fc5-491f-84a1-9a408927f168";
+    fsType = "ext4";
+    options = ["defaults" "nofail" "noexec" "rw"];
+  };
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
