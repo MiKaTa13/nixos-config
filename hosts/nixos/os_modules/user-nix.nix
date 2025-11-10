@@ -7,10 +7,10 @@
 }: {
   environment.systemPackages =
     (with pkgs; [
-      tree
-      bc
-      # home-manager
+      # Lock screen
+      ly
       cmatrix
+
       pinentry-tty
     ])
     ++ (with pkgs-unstable; [

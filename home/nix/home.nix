@@ -31,44 +31,60 @@
     ./modules/nnn.nix
     ./modules/neovim.nix
     ./modules/mpv.nix
-    # ./modules/qutebrowser.nix
     ./modules/xsession.nix
-    ./modules/ghostty.nix
     ./modules/service_picom.nix
     ./modules/service_gpg.nix
     ./modules/service_redshift.nix
     agenix.homeManagerModules.default
+
+    # I use unstable versions which not managed with home-manager.
+    # ./modules/ghostty.nix
+    # ./modules/qutebrowser.nix
   ];
 
   # Packages instaled by home-manager.
   home.packages =
     (with pkgs; [
+      bc
       btop
       direnv
       fira-code
       feh
       gnumake
       gcc
-      git
       htop
       openblas
       pass
       ripgrep
+      tree
       w3m
       python3
       fd
       nsxiv
-      imagemagick
       ffmpeg
       xclip
       offlineimap
       yubikey-manager
-      nixd
       trufflehog # scan for GIT secrets
+      xorg.libxcb # qutebrowser
       agenix.packages.x86_64-linux.default
+
+      ## Note About Using home-manager Command ##
+      # Even with home-manager in your PATH, 
+      # when using the NixOS module integration:
+      # Don't use home-manager switch - it will conflict
+      # Do use sudo nixos-rebuild switch for applying changes
+      # The home-manager command is mainly useful for:
+      # home-manager generations - viewing past generations
+      # home-manager packages - listing packages
+      # home-manager news - viewing news
+      home-manager
     ])
     ++ (with pkgs-unstable; [
       # list of unstable packages go here
+      nixd # neovim
+      ghostty
+      imagemagick
       qutebrowser
       fzf
       gimp3

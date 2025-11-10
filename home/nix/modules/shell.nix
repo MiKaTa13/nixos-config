@@ -17,6 +17,7 @@
         cp = "cp -v";
         df = "df -h";
         du = "du -h";
+        grep = "grep --color=auto";
         year = "cal -mwy";
         fcd = "cd $(find . -type d | fzf --reverse)";
       };

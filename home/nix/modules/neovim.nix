@@ -11,6 +11,7 @@
         nil # language server for Nix
         libclang
         bash-language-server
+        lua-language-server
       ];
       extraPython3Packages = ps: [
         ps.python-lsp-server

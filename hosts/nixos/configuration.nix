@@ -23,7 +23,6 @@
     pulse.enable = true;
   };
 
-  
   # NixOS specific setup.
   nix = {
     settings = {

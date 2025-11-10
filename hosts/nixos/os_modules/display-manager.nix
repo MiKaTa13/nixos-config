@@ -3,10 +3,6 @@
   pkgs,
   ...
 }: {
-  # packages installed in system profile.
-  environment.systemPackages = [
-    pkgs.ly # minimalist display manager (login screen).
-  ];
   services = {
     displayManager = {
       ly = {

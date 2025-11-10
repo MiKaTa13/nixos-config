@@ -34,16 +34,18 @@
           ./hosts/${hostname}/configuration.nix
           home-manager.nixosModules.home-manager
           {
-            # Enable home-manager integration in NixOS config
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup"; # move existing files by appending the "backup".
-            home-manager.users = {
-              ${username} = import ./home/${username}/home.nix;
-            };
-            home-manager.extraSpecialArgs = {
-              inherit username agenix; 
-              inherit pkgs-unstable; # Allow use unstable packages in home.
+            home-manager = {
+              # Enable home-manager integration in NixOS config
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users = {
+                ${username} = import ./home/${username}/home.nix;
+              };
+              backupFileExtension = "backup"; # move existing files by appending the "backup".
+              extraSpecialArgs = {
+                inherit username agenix;
+                inherit pkgs-unstable; # Allow use unstable packages in home.
+              };
             };
           }
         ];
