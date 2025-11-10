@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# But not these files.
+!*.nix
+!*.diff
+!*.age
+# Also don't ignore directories so Git can find those files
+!*/
+
+# Also keep the .gitignore itself tracked
+!.gitignore
