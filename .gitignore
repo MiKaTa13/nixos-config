@@ -1,12 +1,35 @@
-# Ignore everything
-*
+# SOPS/age encrypted secrets
+secrets/
+.sops.yaml
 
-# But not these files.
-!*.nix
-!*.diff
-!*.age
-# Also don't ignore directories so Git can find those files
-!*/
+# agenix
+secrets.nix
 
-# Also keep the .gitignore itself tracked
-!.gitignore
+# Manual secrets
+passwords.nix
+tokens.nix
+
+text
+# Nix outputs
+result
+result-*
+
+# Secrets
+secrets/
+*.secret
+
+# direnv
+.direnv/
+.envrc
+
+# Editor/IDE
+*.swp
+*~
+
+# Temporary
+*.tmp
+*.bak
+.#*
+
+# Logs
+*.log
