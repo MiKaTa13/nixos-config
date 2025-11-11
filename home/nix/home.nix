@@ -89,5 +89,6 @@
       nvitop
       python3
       ffmpeg
+      newsboat
     ]);
 }
