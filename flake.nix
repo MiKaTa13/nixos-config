@@ -45,6 +45,7 @@
               extraSpecialArgs = {
                 inherit username agenix;
                 inherit pkgs-unstable; # Allow use unstable packages in home.
+                secretPath = "/nix-config/home/nix/secrets"; # Path to age encripted files.
               };
             };
           }

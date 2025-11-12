@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-
-{
+{...}: {
   xsession.enable = true;
   xsession.initExtra = ''
     xrdb -merge ~/.Xdefaults
@@ -10,4 +8,3 @@
     exec dwm
   '';
 }
-

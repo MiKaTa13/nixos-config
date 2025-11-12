@@ -1,6 +1,5 @@
 {
-  config,
-  pkgs,
+  secretPath,
   ...
 }: {
   programs.msmtp = {
@@ -17,11 +16,11 @@
       #### GMAIL ####
       account gmail
       host smtp.gmail.com
-      tls_starttls   off
+      tls_starttls off
       port 465
       from misha13kopta@gmail.com
       user misha13kopta@gmail.com
-      passwordeval "age -i ~/.ssh/id_ed25519 -d ~/.config/home-manager/secrets/gmail-acces.age"
+      passwordeval "age -i ~/.ssh/id_ed25519 -d ${secretPath}/gmail-acces.age"
       account default : gmail
     '';
   };

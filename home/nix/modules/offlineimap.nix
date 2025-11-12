@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{secretPath, ...}: let
   mailDir = "/mnt/hdd500/Mail";
   gmailAddress = "misha13kopta@gmail.com";
   gmailSecret = "gmail-acces.age";
@@ -42,7 +38,7 @@ in {
           elif '..' in secret or '/' in secret or '\\' in secret:
               raise ValueError(f"Path traversal detected in secret name: {secret}")
 
-          encrypted_secret_path = "/nix-config/home/nix/secrets"
+          encrypted_secret_path = "${secretPath}"
           result = subprocess.run(["agenix", "-d", secret],
                                   cwd=encrypted_secret_path,
                                   capture_output=True,
