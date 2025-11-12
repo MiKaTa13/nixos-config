@@ -22,10 +22,4 @@
       };
     };
   };
-  # The "sd-switch" option is a tool that automatically starts,
-  # stops, and reloads systemd services
-  # when activating a home-manager generation. Without it,
-  # services might not start until after activation completes,
-  # creating a chicken-and-egg problem with secrets.
-  systemd.user.startServices = "sd-switch";
 }

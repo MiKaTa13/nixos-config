@@ -10,7 +10,14 @@
     homeDirectory = "/home/nix"; # Home directory path
     stateVersion = "25.05";
   };
+
+  # The "sd-switch" option is a tool that automatically starts,
+  # stops, and reloads systemd services
+  # when activating a home-manager generation. Without it,
+  # services might not start until after activation completes,
+  # creating a chicken-and-egg problem with secrets
   systemd.user.startServices = "sd-switch";
+
   imports = [
     ./modules/lf.nix
     ./modules/msmtp.nix
