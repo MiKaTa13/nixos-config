@@ -67,11 +67,24 @@
       fd
       nsxiv
       xclip
+      tmux
+      qemu_full
       offlineimap
       yubikey-manager
       trufflehog # scan for GIT secrets
       xorg.libxcb # qutebrowser
       agenix.packages.x86_64-linux.default
+      nixd # neovim
+      ghostty
+      imagemagick
+      qutebrowser
+      fzf
+      gimp3
+      age
+      nvitop
+      python3
+      ffmpeg
+      newsboat
 
       ## Note About Using home-manager Command ##
       # Even with home-manager in your PATH,
@@ -86,16 +99,5 @@
     ])
     ++ (with pkgs-unstable; [
       # list of unstable packages go here
-      nixd # neovim
-      ghostty
-      imagemagick
-      qutebrowser
-      fzf
-      gimp3
-      age
-      nvitop
-      python3
-      ffmpeg
-      newsboat
     ]);
 }

@@ -1,7 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-{pkgs, ...}: {
+{
+  pkgs,
+  username,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix # Include the results of the hardware scan.
     ./os_modules/display-manager.nix
@@ -25,7 +29,7 @@
   };
 
   # NixOS specific setup.
-  nix = {
+  ${username} = {
     settings = {
       experimental-features = ["nix-command" "flakes"]; # Enable flake.
       download-buffer-size = 524288000; # 500 MB
@@ -84,7 +88,9 @@
     wget
     lm_sensors
     xterm
-    git
+    ly
+    cmatrix
+    pinentry-tty
   ];
 
   # Config path
