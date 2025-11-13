@@ -30,6 +30,9 @@
     nixosConfigurations = {
       ${hostname} = nixpkgs.lib.nixosSystem {
         system = system;
+        specialArgs = {
+          inherit username;
+        };
         modules = [
           ./hosts/${hostname}/configuration.nix
           home-manager.nixosModules.home-manager
@@ -50,10 +53,6 @@
             };
           }
         ];
-        specialArgs = {
-          inherit username;
-          inherit pkgs-unstable; # Allow use unstable packages in system.
-        };
       };
     };
   };
