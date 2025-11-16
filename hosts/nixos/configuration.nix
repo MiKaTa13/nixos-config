@@ -99,10 +99,22 @@
   };
 
   # Mount HDD at boot.
-  fileSystems."/mnt/hdd500" = {
-    device = "/dev/disk/by-uuid/6645a581-3fc5-491f-84a1-9a408927f168";
-    fsType = "ext4";
-    options = ["defaults" "nofail" "noexec" "rw"];
+  fileSystems = {
+    "/mnt/data0" = {
+      device = "/dev/disk/by-uuid/6645a581-3fc5-491f-84a1-9a408927f168";
+      fsType = "ext4";
+      options = ["defaults" "nofail" "noexec" "rw"];
+    };
+    "/mnt/data1" = {
+      device = "/dev/disk/by-uuid/9fc9e40a-a0c7-4873-9a1a-d8356e48c273";
+      fsType = "ext4";
+      options = ["defaults" "nofail" "noexec" "rw"];
+    };
+    "/mnt/data2" = {
+      device = "/dev/disk/by-uuid/fb6b8cf9-bdef-4ef6-8ad7-ce01dbdf4bc2";
+      fsType = "ext4";
+      options = ["defaults" "nofail" "noexec" "rw"];
+    };
   };
 
   # Copy the NixOS configuration file and link it from the resulting system
