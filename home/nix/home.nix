@@ -19,6 +19,7 @@
   systemd.user.startServices = "sd-switch";
 
   imports = [
+    # ./modules/st.nix
     ./modules/lf.nix
     ./modules/msmtp.nix
     ./modules/notmuch.nix
@@ -51,7 +52,9 @@
   # Packages instaled by home-manager.
   home.packages =
     (with pkgs; [
+      chafa
       bc
+      bat
       btop
       direnv
       fira-code
@@ -64,6 +67,7 @@
       ripgrep
       tree
       w3m
+      file
       fd
       nsxiv
       xclip
@@ -71,6 +75,7 @@
       qemu_full
       offlineimap
       yubikey-manager
+      unzip
       trufflehog # scan for GIT secrets
       xorg.libxcb # qutebrowser
       agenix.packages.x86_64-linux.default
