@@ -1,5 +1,5 @@
 {secretPath, ...}: let
-  mailDir = "/mnt/hdd500/Mail";
+  mailDir = "/mnt/data2/Mail";
   gmailAddress = "misha13kopta@gmail.com";
   gmailSecret = "gmail-acces.age";
 

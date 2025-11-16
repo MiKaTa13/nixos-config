@@ -3,7 +3,7 @@
     enable = true;
     extraConfig = {
       database = {
-        path = "/mnt/hdd500/Mail";
+        path = "/mnt/data2/Mail";
       };
     };
     new = {
