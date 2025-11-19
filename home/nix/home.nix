@@ -53,7 +53,6 @@
   # Packages instaled by home-manager.
   home.packages =
     (with pkgs; [
-      chafa
       bc
       bat
       btop
