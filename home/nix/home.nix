@@ -20,6 +20,7 @@
 
   imports = [
     # ./modules/st.nix
+    ./modules/alacritty.nix
     ./modules/lf.nix
     ./modules/msmtp.nix
     ./modules/notmuch.nix
