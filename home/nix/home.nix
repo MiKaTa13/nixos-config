@@ -20,6 +20,7 @@
 
   imports = [
     # ./modules/st.nix
+    ./modules/ollama.nix
     ./modules/alacritty.nix
     ./modules/lf.nix
     ./modules/msmtp.nix
@@ -63,6 +64,7 @@
       gcc
       htop
       openblas
+      nix-tree
       pass
       ripgrep
       tree
