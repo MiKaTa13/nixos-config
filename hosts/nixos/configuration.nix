@@ -16,7 +16,6 @@
     ./os_modules/nvidia-gpu.nix
     ./os_modules/services.nix
     ./os_modules/firejail.nix
-    # ./os_modules/ollama.nix
   ];
 
   # rtkit (optional, recommended) allows Pipewire to use the realtime scheduler for increased performance.

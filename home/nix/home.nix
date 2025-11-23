@@ -19,7 +19,7 @@
   systemd.user.startServices = "sd-switch";
 
   imports = [
-    # ./modules/st.nix
+    ./modules/python313-libs.nix
     ./modules/ollama.nix
     ./modules/alacritty.nix
     ./modules/lf.nix
@@ -84,12 +84,10 @@
       nixd # neovim
       ghostty
       imagemagick
-      qutebrowser
       fzf
       gimp3
       age
       nvitop
-      python3
       ffmpeg
       newsboat
 
@@ -106,5 +104,6 @@
     ])
     ++ (with pkgs-unstable; [
       # list of unstable packages go here
+      qutebrowser
     ]);
 }

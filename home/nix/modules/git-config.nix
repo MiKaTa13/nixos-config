@@ -31,7 +31,7 @@
       purge = "!git clean -df && git checkout -- .";
       wip = "'!f() { git add -A && git commit -m \"WIP\"; }; f'";
       unwip = "reset HEAD~1";
-      ca = "!(git commit -m \"$(git --no-pager diff --no-color --cached | auto-commit)\" && git log --stat -1)"; # write commits with local llm.
+      ca = "!(git commit -m \"$(~/.local/bin/auto-commit.py)\" && git log --stat -1)"; # write commits with local llm.
     };
   };
 }
