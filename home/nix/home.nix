@@ -68,12 +68,14 @@
       pass
       ripgrep
       tree
+      exiftool
       w3m
       file
       fd
       nsxiv
       xclip
       tmux
+      libjpeg
       qemu_full
       offlineimap
       yubikey-manager
