@@ -2,6 +2,7 @@
   services = {
     # Compositor settings.
     picom = {
+      enable = true;
       settings = {
         corner-radius = 0;
         blur = {
@@ -24,7 +25,6 @@
         xrender-sync-fence = true;
         log-level = "warn";
       };
-      enable = true;
       backend = "glx";
       vSync = true;
       shadow = true;

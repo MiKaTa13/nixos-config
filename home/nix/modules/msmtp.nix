@@ -4,7 +4,7 @@
 }: {
   programs.msmtp = {
     enable = true;
-    extraConfig = ''
+    configContent = ''
       defaults
       protocol smtp
       auth on

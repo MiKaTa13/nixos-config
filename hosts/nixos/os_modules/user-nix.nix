@@ -11,6 +11,7 @@
       useDefaultShell = true;
       extraGroups = [
         "wheel"
+        "wireshark"
         "video"
         "audio"
         "input"

@@ -63,6 +63,7 @@
       gnumake
       gcc
       htop
+      wireshark
       openblas
       nix-tree
       pass
