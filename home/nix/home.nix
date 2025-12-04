@@ -23,7 +23,7 @@
     ./modules/ollama.nix
     ./modules/alacritty.nix
     ./modules/lf.nix
-    ./modules/msmtp.nix
+    # ./modules/msmtp.nix
     ./modules/notmuch.nix
     ./modules/offlineimap.nix
     ./modules/neomutt.nix

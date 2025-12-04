@@ -1,8 +1,25 @@
-{...}: {
+{pkgs, ...}: let
+  ollamaCuda = pkgs.ollama-cuda.override {
+    cudaArches = ["61"]; # Add compute capability 61 for GTX 1060
+
+    #  ollamaCuda = pkgs.ollama-cuda.overrideAttrs (final: prev: {
+    #     # Override preBuild to set CUDA architecture
+    #     preBuild = ''
+    #       cmake -B build \
+    #         -DCMAKE_SKIP_BUILD_RPATH=ON \
+    #         -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON \
+    #         -DCMAKE_CUDA_ARCHITECTURES="61"
+    #
+    #       cmake --build build -j ${builtins.getEnv "NIX_BUILD_CORES"}
+    #     '';
+    #   });
+  };
+in {
   services = {
     ollama = {
+      package = ollamaCuda;
       enable = true;
-      acceleration = "cuda"; # null - for disable.
+      acceleration = "cuda"; # false - for disable.
       environmentVariables = {
         # Use custom model directory
         OLLAMA_MODELS = "/mnt/data2/OllamaModels";
