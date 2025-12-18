@@ -19,10 +19,11 @@
   systemd.user.startServices = "sd-switch";
 
   imports = [
+    ./modules/keyboard.nix
+    ./modules/ranger.nix
     ./modules/python313-libs.nix
     ./modules/ollama.nix
     ./modules/alacritty.nix
-    ./modules/lf.nix
     ./modules/msmtp.nix
     ./modules/notmuch.nix
     ./modules/offlineimap.nix
@@ -44,11 +45,9 @@
     ./modules/service_picom.nix
     ./modules/service_gpg.nix
     ./modules/service_redshift.nix
+    ./modules/qutebrowser.nix
     agenix.homeManagerModules.default
-
-    # I use unstable versions which not managed with home-manager.
     # ./modules/ghostty.nix
-    # ./modules/qutebrowser.nix
   ];
 
   # Packages instaled by home-manager.
@@ -76,6 +75,7 @@
       nsxiv
       xclip
       tmux
+      xprintidle
       libjpeg
       qemu_full
       offlineimap
@@ -93,6 +93,7 @@
       nvitop
       ffmpeg
       newsboat
+      g810-led # Linux LED controller for some Logitech G Keyboards
 
       ## Note About Using home-manager Command ##
       # Even with home-manager in your PATH,
@@ -107,6 +108,5 @@
     ])
     ++ (with pkgs-unstable; [
       # list of unstable packages go here
-      qutebrowser
     ]);
 }

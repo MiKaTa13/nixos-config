@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   services = {
     # Compositor settings.
     picom = {
@@ -25,7 +25,7 @@
         xrender-sync-fence = true;
         log-level = "warn";
       };
-      backend = "glx";
+      backend = "xrender"; # try "glx" if xrender doesn't help
       vSync = true;
       shadow = true;
       shadowOpacity = 0.96;

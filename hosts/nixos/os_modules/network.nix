@@ -11,6 +11,7 @@
     # };
     firewall = {
       enable = true;
+      allowedTCPPorts = [ 22 80 443 ];
       #allowedTCPPorts = [ ]; # Open ports in the firewall.
       #allowedUDPPorts = [ ];
       extraCommands = ''
@@ -20,16 +21,19 @@
         iptables -P OUTPUT DROP
 
         # Allow loopback interface
-        iptables -A INPUT -i lo -j ACCEPT
-        iptables -A OUTPUT -o lo -j ACCEPT
+        iptables -I INPUT -i lo -j ACCEPT
+        iptables -I OUTPUT -o lo -j ACCEPT
 
         # Allow established and related connections
-        iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-        iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+        iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+        iptables -I OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
         # Allow ICMP (ping)
-        iptables -A INPUT -p icmp -j ACCEPT
-        iptables -A OUTPUT -p icmp -j ACCEPT
+        iptables -I INPUT -p icmp -j ACCEPT
+        iptables -I OUTPUT -p icmp -j ACCEPT
+
+        # Allow traffic on port 631 for CUPS
+        iptables -A OUTPUT -p tcp --dport 631 -j ACCEPT
 
         # Allow outbound DNS
         iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
