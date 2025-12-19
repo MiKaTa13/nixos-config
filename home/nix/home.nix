@@ -19,7 +19,6 @@
   systemd.user.startServices = "sd-switch";
 
   imports = [
-    ./modules/keyboard.nix
     ./modules/ranger.nix
     ./modules/python313-libs.nix
     ./modules/ollama.nix
@@ -42,12 +41,14 @@
     ./modules/neovim.nix
     ./modules/mpv.nix
     ./modules/xsession.nix
+    ./modules/qutebrowser.nix
+    agenix.homeManagerModules.default
+
+    # services
+    ./modules/service_keyboard.nix
     ./modules/service_picom.nix
     ./modules/service_gpg.nix
     ./modules/service_redshift.nix
-    ./modules/qutebrowser.nix
-    agenix.homeManagerModules.default
-    # ./modules/ghostty.nix
   ];
 
   # Packages instaled by home-manager.
@@ -59,6 +60,7 @@
       direnv
       fira-code
       feh
+      brightnessctl
       gnumake
       gcc
       htop

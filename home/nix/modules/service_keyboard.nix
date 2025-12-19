@@ -26,7 +26,7 @@
           idle_sec=$(( idle_ms / 1000 ))
 
           if (( idle_sec >= IDLE_LIMIT )) && [[ $led_state == "on" ]]; then
-              $G810 -a $PROFILE_SLEEP
+              $G810 -p $PROFILE_SLEEP
               led_state=off
           fi
 
