@@ -60,7 +60,6 @@
       direnv
       fira-code
       feh
-      brightnessctl
       gnumake
       gcc
       htop
@@ -77,6 +76,7 @@
       nsxiv
       xclip
       tmux
+      urlscan # neomutt
       xprintidle
       libjpeg
       qemu_full

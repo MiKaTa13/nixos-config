@@ -1,7 +1,9 @@
-{...}: {
+{lib, ...}: {
   services = {
     # X server
-    libinput.enable = true;
+    libinput = {
+      enable = true;
+    };
     xserver = {
       enable = true;
       autorun = true;
@@ -19,5 +21,8 @@
         KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c33c", MODE="0660", GROUP="input", TAG+="uaccess"
       '';
     };
+    # Disabled services
+    acpid.enable = lib.mkForce false;
+    avahi.enable = lib.mkForce false;
   };
 }

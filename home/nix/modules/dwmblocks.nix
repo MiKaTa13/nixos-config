@@ -10,9 +10,5 @@
     ];
   };
 in {
-  home = {
-    packages = with pkgs; [
-      my-dwmblocks
-    ];
-  };
+  home.packages = [my-dwmblocks];
 }

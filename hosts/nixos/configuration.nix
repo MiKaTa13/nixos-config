@@ -16,6 +16,7 @@
     ./os_modules/nvidia-gpu.nix
     ./os_modules/services.nix
     ./os_modules/firejail.nix
+    ./os_modules/keyboard-led.nix
   ];
 
   # rtkit (optional, recommended) allows Pipewire to use the realtime scheduler for increased performance.
@@ -90,6 +91,7 @@
     ly
     cmatrix
     pinentry-tty
+    g810-led # Linux LED controller for some Logitech G Keyboards
   ];
 
   # Config path

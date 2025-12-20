@@ -1,7 +1,5 @@
-{ config, pkgs, ... }:
-
-let
-  myDwm = pkgs.dwm.overrideAttrs (old: {
+{pkgs, ...}: let
+  my-dwm = pkgs.dwm.overrideAttrs {
     src = ./sources/dwm;
     patches = [
       ./patches/dwm/dwm-custom.diff
@@ -14,9 +12,7 @@ let
         hash = "sha256-i/lvTKDXdUrtxpx0epBUz+FSSlO2M+CJu/8SFr2wbG0=";
       })
     ];
-  });
-in
-{
-    home.packages = [ myDwm ];
+  };
+in {
+  home.packages = [my-dwm];
 }
-

@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   services.redshift = {
     enable = true;
     dawnTime = "6:00-7:45";

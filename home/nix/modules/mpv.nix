@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.mpv = {
     enable = true;
     bindings = {
@@ -18,7 +14,8 @@
     defaultProfiles = [
       "gpu-hq"
     ];
-    scripts = [ # List of scripts to use with mpv.
+    scripts = [
+      # List of scripts to use with mpv.
       pkgs.mpvScripts.mpris
     ];
   };

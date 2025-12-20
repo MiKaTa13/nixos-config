@@ -1,13 +1,17 @@
 {pkgs, ...}: let
-  keyboardProfile = pkgs.writeText "kbd_led_profile" ''
-    # Green Profile
-    a 00ff00 # Set all keys green
-    k escape ff0000
-    c # Commit changes
-  '';
-  keyboardProfileSleep = pkgs.writeText "kbd_led_sleep_profile" ''
-    fx breathing all ff0000 30 # Set breathing effect with red color and speed 30
-  '';
+  keyboardProfile =
+    pkgs.writeText "kbd_led_profile"
+    ''
+      # Green Profile
+      a 00ff00 # Set all keys green
+      k escape ff0000
+      c # Commit changes
+    '';
+  keyboardProfileSleep =
+    pkgs.writeText "kbd_led_sleep_profile"
+    ''
+      fx breathing all ff0000 30 # Set breathing effect with red color and speed 30
+    '';
   ledManager =
     pkgs.writeShellScriptBin "led_manager"
     ''
@@ -41,6 +45,12 @@
 in {
   systemd.user.services = {
     keyboard-led = {
+      serviceConfig = {
+        NoNewPrivileges = true;
+        PrivateTmp = true;
+        ProtectSystem = "strict";
+        ProtectHome = true;
+      };
       Unit = {
         Description = "Set keyboard led";
       };
@@ -48,6 +58,9 @@ in {
       Service = {
         Type = "simple";
         ExecStart = "${ledManager}/bin/led_manager";
+        UMask = "0022";
+        User = "nix";
+        Group = "users";
       };
 
       Install = {

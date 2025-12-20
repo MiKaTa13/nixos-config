@@ -14,9 +14,5 @@
     ];
   };
 in {
-  home = {
-    packages = with pkgs; [
-      my-dmenu
-    ];
-  };
+  home.packages = [my-dmenu];
 }
