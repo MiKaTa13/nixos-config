@@ -7,6 +7,7 @@
     extraConfig = ''
       config.set('editor.command', ['xterm', '-e', 'nvim', '{file}'])
       config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:136.0) Gecko/20100101 Firefox/139.0', 'https://accounts.google.com/*')
+      config.set("content.pdfjs", True) # PDF preview.
       c.input.insert_mode.auto_load = True
       c.prompt.filebrowser = False
       c.completion.height = "30%"
@@ -68,8 +69,9 @@
 
     searchEngines = {
       w = "https://en.wikipedia.org/wiki/Special:Search?search={}&go=Go&ns0=1";
-      ns = "https://home-manager-options.extranix.com/?query={}&release=release-25.05";
-      g = "https://www.google.com/search?hl=en&q={}";
+      ns = "https://home-manager-options.extranix.com/?query={}&release=release-25.11";
+      Ns = "https://search.nixos.org/packages?channel=25.11&query={}";
+      go = "https://www.google.com/search?hl=en&q={}";
     };
 
     quickmarks = {

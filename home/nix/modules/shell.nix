@@ -44,7 +44,7 @@
 
         # quemu on ssh.
         # export QEMU_OPTS='-nographic'
-        
+
         # Color man
         export LESS_TERMCAP_mb=$'\e[1;32m'
         export LESS_TERMCAP_md=$'\e[1;32m'
@@ -57,6 +57,16 @@
         # fzf
         source ~/.local/share/fzf/key-bindings.bash
         source ~/.local/share/fzf/completion.bash
+
+        # Translate text from clipboard
+        translate() {
+          local model="hf.co/INSAIT-Institute/MamayLM-Gemma-3-12B-IT-v1.0-GGUF:Q4_K_M"
+          local prompt="translate to Ukrainian"
+          local clipboard
+          clipboard=$(xclip -out -selection clipboard)
+          echo -e "[$(echo -n "$clipboard" | wc -c) bytes]\n"
+          ollama run $model "$prompt $clipboard"
+        }
       '';
     };
   };

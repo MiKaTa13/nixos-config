@@ -10,12 +10,15 @@
   keyboardProfileSleep =
     pkgs.writeText "kbd_led_sleep_profile"
     ''
-      fx breathing all ff0000 30 # Set breathing effect with red color and speed 30
+      fx breathing all ff0000 25 # Set breathing effect with red color and speed 30
     '';
   ledManager =
     pkgs.writeShellScriptBin "led_manager"
     ''
       G810="${pkgs.g810-led}/bin/g810-led"
+      SED="${pkgs.gnused}/bin/sed"
+      XSET="${pkgs.xorg.xset}/bin/xset"
+
       PROFILE="${keyboardProfile}"
       PROFILE_SLEEP="${keyboardProfileSleep}"
 
@@ -24,11 +27,25 @@
 
       $G810 -p $PROFILE
       led_state=on
-
+      
+      $G810 -g numeric 000000 
+      $G810 -k numlock ff0000 -c
+      numlock_led_state=off
+ 
       while :; do
           idle_ms=$(${pkgs.xprintidle}/bin/xprintidle)
           idle_sec=$(( idle_ms / 1000 ))
 
+          if [[ $numlock_state == "on" ]] && [[ $numlock_led_state == "off" ]]; then
+              $G810 -g numeric ff0000
+              $G810 -k numlock 00ff00 -c
+              numlock_led_state=on
+          elif [[ $numlock_state == "off" ]] && [[ $numlock_led_state == "on" ]]; then
+              $G810 -g numeric 000000 
+              $G810 -k numlock ff0000 -c
+              numlock_led_state=off
+          fi
+ 
           if (( idle_sec >= IDLE_LIMIT )) && [[ $led_state == "on" ]]; then
               $G810 -p $PROFILE_SLEEP
               led_state=off
@@ -38,6 +55,8 @@
               $G810 -p $PROFILE
               led_state=on
           fi
+
+          numlock_state=$($XSET q | $SED -n 's/^.*Num Lock:\s*\(\S*\).*$/\1/p')
 
           ${pkgs.coreutils}/bin/sleep "$CHECK_INTERVAL"
       done

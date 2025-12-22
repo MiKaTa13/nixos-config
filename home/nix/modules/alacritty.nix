@@ -32,6 +32,7 @@
         builtin_box_drawing = true;
       };
     };
-    theme = "rose_pine";
+    # theme = "rose_pine";
+    theme = "falcon";
   };
 }
