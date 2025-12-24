@@ -1,11 +1,20 @@
 {...}: {
   services.redshift = {
     enable = true;
-    dawnTime = "6:00-7:45";
-    duskTime = "18:35-20:15";
+    settings = {
+      # Example of a [redshift] section with keys/values
+      redshift = {
+        adjustment-method = "randr";
+        gamma-day = 0.8;
+        gamma-night = 0.6;
+        fade = 1;
+      };
+    };
     temperature = {
       day = 5500;
-      night = 3700;
+      night = 3600;
     };
+    latitude = 48.80;
+    longitude = 2.33;
   };
 }
