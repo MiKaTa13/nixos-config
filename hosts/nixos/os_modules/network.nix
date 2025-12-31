@@ -1,6 +1,7 @@
 # Network setup.
 {...}: {
   networking = {
+    enableIPv6 = false; # disable IPv6
     hostName = "nixos"; # Define your hostname.
     # Wake-on-lan.
     # interfaces = {

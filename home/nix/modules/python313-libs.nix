@@ -4,6 +4,8 @@
       with ps; [
         requests
         black
+        isort
+        ruff
       ]))
   ];
 }

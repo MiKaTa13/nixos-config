@@ -8,7 +8,7 @@
   services = {
     # Enable the OpenSSH daemon.
     openssh = {
-      enable = true;
+      enable = false;
       # require public key authentication for better security
       settings = {
         PermitRootLogin = "no";

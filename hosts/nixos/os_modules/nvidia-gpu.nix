@@ -16,6 +16,8 @@
       "cuda_nvcc"
       "cuda_cccl"
       "libcublas"
+      "libnpp"
+      "libcufft"
     ];
 
   # Enable OpenGL

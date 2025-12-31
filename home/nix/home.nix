@@ -26,6 +26,7 @@
     ./modules/msmtp.nix
     ./modules/notmuch.nix
     ./modules/offlineimap.nix
+    ./modules/yt-dlp.nix
     ./modules/neomutt.nix
     ./modules/rclone.nix
     ./modules/agenix.nix
@@ -65,6 +66,8 @@
       htop
       wireshark
       openblas
+      remind
+      wyrd # Text-based front-end to Remind
       nix-tree
       pass
       ripgrep
@@ -93,7 +96,7 @@
       gimp3
       age
       nvitop
-      ffmpeg
+      ffmpeg-full
       newsboat
       g810-led # Linux LED controller for some Logitech G Keyboards
 

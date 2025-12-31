@@ -33,6 +33,6 @@
       };
     };
     # theme = "rose_pine";
-    theme = "falcon";
+    theme = "tokyo_night";
   };
 }

@@ -8,6 +8,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix # Include the results of the hardware scan.
+    ./os_modules/nix-cache.nix
     ./os_modules/display-manager.nix
     ./os_modules/network.nix
     ./os_modules/ssh-config.nix
@@ -56,6 +57,9 @@
 
   # clean /tmp at boot
   boot.tmp.cleanOnBoot = true;
+
+  # disable IPv6 in the kernel
+  boot.kernelParams = ["ipv6.disable=1"];
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
