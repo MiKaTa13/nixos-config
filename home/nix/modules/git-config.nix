@@ -10,6 +10,7 @@
         init.defaultBranch = "main";
         safe.directory = "/etc/nixos";
         core.hooksPath = "~/.git-hooks";
+        core.editor = "nvim";
         # safe.directory = "/home/nix/.dotfiles";
         alias = {
           ci = "commit";

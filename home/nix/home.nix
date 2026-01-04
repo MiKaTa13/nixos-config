@@ -39,7 +39,7 @@
     ./modules/tmux.nix
     ./modules/zathura.nix
     ./modules/nnn.nix
-    ./modules/neovim.nix
+    # ./modules/neovim.nix
     ./modules/mpv.nix
     ./modules/xsession.nix
     ./modules/qutebrowser.nix
@@ -55,6 +55,20 @@
   # Packages instaled by home-manager.
   home.packages =
     (with pkgs; [
+      # neovim
+      neovim
+      clang-tools
+      bash-language-server
+      lua-language-server
+      nil
+      prettier
+
+      shfmt
+      stylua
+      lua-language-server
+      pyright
+      black
+      alejandra
       bc
       bat
       btop
@@ -67,12 +81,17 @@
       wireshark
       openblas
       remind
+      tree-sitter
       wyrd # Text-based front-end to Remind
       nix-tree
+      isort
+      isort
+      black
       pass
       ripgrep
       tree
       exiftool
+      alejandra
       w3m
       file
       fd
@@ -86,10 +105,11 @@
       offlineimap
       yubikey-manager
       unzip
+      stylua
+      ruff
       trufflehog # scan for GIT secrets
       xorg.libxcb # qutebrowser
       agenix.packages.x86_64-linux.default
-      nixd # neovim
       ghostty
       imagemagick
       fzf

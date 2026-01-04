@@ -67,6 +67,11 @@
           echo -e "[$(echo -n "$clipboard" | wc -c) bytes]\n"
           ollama run $model "$prompt $clipboard"
         }
+
+        # ffmpeg-CUDA
+        ffmpeg-cuda() {
+          ffmpeg -hwaccel cuda -hwaccel_output_format cuda "$@"
+        }
       '';
     };
   };

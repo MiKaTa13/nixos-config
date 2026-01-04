@@ -4,12 +4,16 @@
       defaultEditor = true;
       enable = true;
       extraPackages = with pkgs; [
-        shfmt
-        pyright
-        alejandra
-        deadnix
-        nil # language server for Nix
-        libclang
+               alejandra
+               shfmt
+               stylua
+               black
+               nodePackages.prettier
+               sqlite
+               ripgrep
+               fd
+               nodePackages.prettier
+               libclang
         bash-language-server
         lua-language-server
       ];
