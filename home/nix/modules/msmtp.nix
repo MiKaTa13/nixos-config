@@ -1,7 +1,4 @@
-{
-  secretPath,
-  ...
-}: {
+{secretPath, ...}: {
   programs.msmtp = {
     enable = true;
     configContent = ''

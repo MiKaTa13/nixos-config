@@ -41,7 +41,7 @@
       c.fonts.tabs.selected = "8pt Droid Sans Mono"
       c.fonts.tabs.unselected = c.fonts.tabs.selected
       c.fonts.statusbar = "8pt Droid Sans Mono"
-      c.fonts.downloads = c.fonts.statusbar 
+      c.fonts.downloads = c.fonts.statusbar
       c.fonts.prompts = c.fonts.statusbar
       c.fonts.hints = "9px Droid Sans Mono"
       c.fonts.messages.info = "8pt Droid Sans Mono"
