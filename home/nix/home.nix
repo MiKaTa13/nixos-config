@@ -39,7 +39,7 @@
     ./modules/tmux.nix
     ./modules/zathura.nix
     ./modules/nnn.nix
-    # ./modules/neovim.nix
+    ./modules/neovim.nix
     ./modules/mpv.nix
     ./modules/xsession.nix
     ./modules/qutebrowser.nix
@@ -56,12 +56,13 @@
   home.packages =
     (with pkgs; [
       # neovim
-      neovim
+      # neovim
       clang-tools
       bash-language-server
       lua-language-server
       nil
       prettier
+      nerd-fonts.fira-code
 
       shfmt
       stylua
@@ -81,7 +82,6 @@
       wireshark
       openblas
       remind
-      tree-sitter
       wyrd # Text-based front-end to Remind
       nix-tree
       isort
