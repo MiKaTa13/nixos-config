@@ -26,7 +26,6 @@
     ./modules/msmtp.nix
     ./modules/notmuch.nix
     ./modules/offlineimap.nix
-    ./modules/yt-dlp.nix
     ./modules/neomutt.nix
     ./modules/rclone.nix
     ./modules/agenix.nix
@@ -55,8 +54,6 @@
   # Packages instaled by home-manager.
   home.packages =
     (with pkgs; [
-      # neovim
-      # neovim
       clang-tools
       bash-language-server
       lua-language-server
@@ -64,6 +61,8 @@
       prettier
       nerd-fonts.fira-code
 
+      iotop
+      aria2
       shfmt
       stylua
       lua-language-server
@@ -104,6 +103,7 @@
       qemu_full
       offlineimap
       yubikey-manager
+      zip
       unzip
       stylua
       ruff

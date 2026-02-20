@@ -1,7 +1,7 @@
 # Network setup.
 {...}: {
   networking = {
-    enableIPv6 = false; # disable IPv6
+    enableIPv6 = true; # disable IPv6
     hostName = "nixos"; # Define your hostname.
     # Wake-on-lan.
     # interfaces = {
@@ -12,7 +12,7 @@
     # };
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 80 443 ];
+      allowedTCPPorts = [22 80 443];
       #allowedTCPPorts = [ ]; # Open ports in the firewall.
       #allowedUDPPorts = [ ];
       extraCommands = ''
@@ -57,7 +57,7 @@
         # Drops any incoming packet that does not match a valid connection state
         iptables -A INPUT -m conntrack --ctstate INVALID -j DROP
 
-        # SYN flood protection and rate limiting 
+        # SYN flood protection and rate limiting
         iptables -A INPUT -p tcp --syn -m limit --limit 1/s -j ACCEPT
         iptables -A INPUT -p tcp --syn -j DROP
 

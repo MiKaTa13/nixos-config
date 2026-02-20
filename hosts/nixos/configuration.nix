@@ -11,7 +11,8 @@
     ./os_modules/nix-cache.nix
     ./os_modules/display-manager.nix
     ./os_modules/network.nix
-    ./os_modules/ssh-config.nix
+    ./os_modules/sshd-config.nix
+    ./os_modules/ssh-client-config.nix
     ./os_modules/printing.nix
     ./os_modules/user-nix.nix
     ./os_modules/nvidia-gpu.nix
@@ -59,7 +60,7 @@
   boot.tmp.cleanOnBoot = true;
 
   # disable IPv6 in the kernel
-  boot.kernelParams = ["ipv6.disable=1"];
+  boot.kernelParams = ["ipv6.disable=0"];
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";

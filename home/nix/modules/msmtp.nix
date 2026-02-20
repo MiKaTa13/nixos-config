@@ -10,6 +10,7 @@
       syslog LOG_USER
       logfile ~/.msmtp.log
       timeout 60
+
       #### GMAIL ####
       account gmail
       host smtp.gmail.com
