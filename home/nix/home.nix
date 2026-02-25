@@ -34,6 +34,7 @@
     ./modules/dwmblocks.nix
     ./modules/git-config.nix
     ./modules/vim.nix
+    ./modules/st.nix
     ./modules/shell.nix
     ./modules/tmux.nix
     ./modules/zathura.nix
@@ -61,6 +62,7 @@
       prettier
       nerd-fonts.fira-code
 
+      kitty
       iotop
       aria2
       shfmt
