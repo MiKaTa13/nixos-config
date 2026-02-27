@@ -12,7 +12,6 @@
     ./os_modules/display-manager.nix
     ./os_modules/network.nix
     ./os_modules/sshd-config.nix
-    ./os_modules/ssh-client-config.nix
     ./os_modules/printing.nix
     ./os_modules/user-nix.nix
     ./os_modules/nvidia-gpu.nix
