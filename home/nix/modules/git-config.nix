@@ -9,7 +9,7 @@
         };
         init.defaultBranch = "main";
         safe.directory = "/etc/nixos";
-        # core.hooksPath = "~/.git-hooks"; # Uncoment to add hoooks
+        core.hooksPath = "~/.git-hooks"; # Uncoment to add hoooks
         core.editor = "nvim";
         # safe.directory = "/home/nix/.dotfiles";
         alias = {

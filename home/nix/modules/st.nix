@@ -2,7 +2,7 @@
   my-st = pkgs.st.overrideAttrs {
     src = ./sources/st; # or use fetchFromGitHub
     patches = [
-      # ./patches/st/st-custom.diff # local pacth
+      ./patches/st/st-custom.diff # local pacth
       (pkgs.fetchpatch {
         # scrollback
         url = "https://st.suckless.org/patches/scrollback/st-scrollback-0.9.2.diff";

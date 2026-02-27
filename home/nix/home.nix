@@ -62,6 +62,7 @@
       prettier
       nerd-fonts.fira-code
 
+      gitleaks
       kitty
       iotop
       aria2
