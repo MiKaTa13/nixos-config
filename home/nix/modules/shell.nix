@@ -20,6 +20,8 @@
         grep = "grep --color=auto";
         year = "cal -mwy";
         fcd = "cd $(find . -type d | fzf --reverse)";
+        # Push current branch to github and sourcehut.
+        mirror = "git push github HEAD && git push sourcehut HEAD";
       };
       shellOptions = [
         "histappend"
