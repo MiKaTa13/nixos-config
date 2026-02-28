@@ -1,19 +1,25 @@
-## DIRECTORY STRUCTURE ##
+# My nixOS config
 
+## DIRECTORY STRUCTURE
 ```
 /your-config-repo
-├── flake.nix
-├── hosts
-│   └── your-hostname
-│       ├── configuration.nix
-│       └── hardware-configuration.nix    # Add this here
-└── home
-    └── your-username
-        └── home.nix
+├── home
+│   └── your-username
+│       ├── modules
+│       │   ├── patches
+│       │   │   ├── dwm
+│       │   │   └── st
+│       │   └── sources
+│       │       ├── dmenu
+│       │       ├── dwm
+│       │       ├── dwmblocks
+│       │       └── st
+│       └── secrets
+└── hosts
+    └── your-hostname
+        └── os_modules
+
 ```
 
-## NIXOS ##
+## NIXOS
 sudo nixos-rebuild switch --flake .#your-hostname
-
-## HOME ##
-home-manager switch --flake .#your-username
