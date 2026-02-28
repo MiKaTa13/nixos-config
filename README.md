@@ -1,6 +1,7 @@
 ## DIRECTORY STRUCTURE ##
 
-"/your-config-repo
+```
+/your-config-repo
 ├── flake.nix
 ├── hosts
 │   └── your-hostname
@@ -9,7 +10,7 @@
 └── home
     └── your-username
         └── home.nix
-"
+```
 
 ## NIXOS ##
 sudo nixos-rebuild switch --flake .#your-hostname
