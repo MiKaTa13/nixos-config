@@ -23,6 +23,11 @@
         url = "https://st.suckless.org/patches/boxdraw/st-boxdraw_v2-0.8.5.diff";
         hash = "sha256-WN/R6dPuw1eviHOvVVBw2VBSMDtfi1LCkXyX36EJKi4=";
       })
+      (pkgs.fetchpatch {
+        # st-glyph-wide-support
+        url = "https://st.suckless.org/patches/glyph_wide_support/st-glyph-wide-support-boxdraw-20220411-ef05519.diff";
+        hash = "sha256-MtOFgi8W8SOaj/NpZAg8IGCOR6e3JnfxWw7COVO0RkU=";
+      })
     ];
   };
 in {
