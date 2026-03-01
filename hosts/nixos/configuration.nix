@@ -39,7 +39,7 @@
     gc = {
       automatic = true;
       dates = "daily";
-      options = "--delete-older-than 30d";
+      options = "--delete-older-than 14d";
     };
   };
 
@@ -58,7 +58,7 @@
   # clean /tmp at boot
   boot.tmp.cleanOnBoot = true;
 
-  # disable IPv6 in the kernel
+  # disable IPv6 in the kernel (0=enabled)
   boot.kernelParams = ["ipv6.disable=0"];
 
   # Set your time zone.

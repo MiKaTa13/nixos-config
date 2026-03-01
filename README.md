@@ -22,4 +22,5 @@
 ```
 
 ## NIXOS
+cd  your-config-repo
 sudo nixos-rebuild switch --flake .#your-hostname
