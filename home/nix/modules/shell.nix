@@ -22,6 +22,8 @@
         fcd = "cd $(find . -type d | fzf --reverse)";
         # Push current branch to github and sourcehut.
         mirror = "git push github HEAD && git push sourcehut HEAD";
+        # Manage dotfiles.
+        dotfiles = "git --git-dir=\$HOME/.dotfiles/ --work-tree=\$HOME";
       };
       shellOptions = [
         "histappend"

@@ -55,73 +55,70 @@
   # Packages instaled by home-manager.
   home.packages =
     (with pkgs; [
-      clang-tools
-      bash-language-server
-      lua-language-server
-      nil
-      prettier
-      nerd-fonts.fira-code
-
-      gitleaks
-      kitty
-      iotop
+      age
+      agenix.packages.x86_64-linux.default
+      alejandra
+      alejandra
       aria2
+      bash-language-server
+      bat
+      bc
+      black
+      black
+      btop
+      clang-tools
+      direnv
+      exiftool
+      fd
+      feh
+      ffmpeg-full
+      file
+      fira-code
+      fzf
+      g810-led # Linux LED controller for some Logitech G Keyboards
+      gcc
+      ghostty
+      gimp3
+      gitleaks
+      gnumake
+      htop
+      imagemagick
+      iotop
+      isort
+      libjpeg
+      lua-language-server
+      lua-language-server
+      nerd-fonts.fira-code
+      newsboat
+      nil
+      nix-tree
+      nsxiv
+      nvitop
+      offlineimap
+      openblas
+      pass
+      prettier
+      pyright
+      qemu_full
+      remind
+      ripgrep
+      ruff
       shfmt
       stylua
-      lua-language-server
-      pyright
-      black
-      alejandra
-      bc
-      bat
-      btop
-      direnv
-      fira-code
-      feh
-      gnumake
-      gcc
-      htop
-      wireshark
-      openblas
-      remind
-      wyrd # Text-based front-end to Remind
-      nix-tree
-      isort
-      isort
-      black
-      pass
-      ripgrep
-      tree
-      exiftool
-      alejandra
-      w3m
-      file
-      fd
-      nsxiv
-      xclip
+      stylua
       tmux
+      tree
+      trufflehog # scan for GIT secrets
+      unzip
       urlscan # neomutt
+      w3m
+      wireshark
+      wyrd # Text-based front-end to Remind
+      xclip
+      xorg.libxcb # qutebrowser
       xprintidle
-      libjpeg
-      qemu_full
-      offlineimap
       yubikey-manager
       zip
-      unzip
-      stylua
-      ruff
-      trufflehog # scan for GIT secrets
-      xorg.libxcb # qutebrowser
-      agenix.packages.x86_64-linux.default
-      ghostty
-      imagemagick
-      fzf
-      gimp3
-      age
-      nvitop
-      ffmpeg-full
-      newsboat
-      g810-led # Linux LED controller for some Logitech G Keyboards
 
       ## Note About Using home-manager Command ##
       # Even with home-manager in your PATH,
