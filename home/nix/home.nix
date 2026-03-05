@@ -19,36 +19,38 @@
   systemd.user.startServices = "sd-switch";
 
   imports = [
-    ./modules/ranger.nix
-    ./modules/python313-libs.nix
-    ./modules/ollama.nix
-    ./modules/alacritty.nix
-    ./modules/msmtp.nix
-    ./modules/notmuch.nix
-    ./modules/offlineimap.nix
-    ./modules/neomutt.nix
-    ./modules/rclone.nix
+    agenix.homeManagerModules.default
+    ./modules/slop.nix
     ./modules/agenix.nix
-    ./modules/dwm.nix
+    ./modules/alacritty.nix
     ./modules/dmenu.nix
     ./modules/dwmblocks.nix
+    ./modules/dwm.nix
     ./modules/git-config.nix
-    ./modules/vim.nix
-    ./modules/st.nix
-    ./modules/shell.nix
-    ./modules/tmux.nix
-    ./modules/zathura.nix
-    ./modules/nnn.nix
-    ./modules/neovim.nix
     ./modules/mpv.nix
-    ./modules/xsession.nix
+    ./modules/msmtp.nix
+    ./modules/neomutt.nix
+    ./modules/neovim.nix
+    ./modules/nnn.nix
+    ./modules/notmuch.nix
+    ./modules/offlineimap.nix
+    ./modules/ollama.nix
+    ./modules/python313-libs.nix
     ./modules/qutebrowser.nix
-    agenix.homeManagerModules.default
+    ./modules/ranger.nix
+    ./modules/rclone.nix
+    ./modules/shell.nix
+    ./modules/st.nix
+    ./modules/tmux.nix
+    ./modules/vim.nix
+    ./modules/wallpaper_service.nix
+    ./modules/xsession.nix
+    ./modules/zathura.nix
 
     # services
+    ./modules/service_gpg.nix
     ./modules/service_keyboard.nix
     ./modules/service_picom.nix
-    ./modules/service_gpg.nix
     ./modules/service_redshift.nix
   ];
 
