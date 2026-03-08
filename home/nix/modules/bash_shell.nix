@@ -36,6 +36,9 @@
         # PATH
         PATH=$PATH:$HOME/.local/bin
 
+        # History
+        export HISTCONTROL=ignoreboth:erasedups
+
         # ls colors
         LS_COLORS=$LS_COLORS:'di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
         export LS_COLORS
@@ -49,9 +52,6 @@
         GIT_PS1_SHOWUPSTREAM="auto"
         # Custom PS1 prompt
         PS1='\[\033[37m\][\u@\h \[\033[36m\]\w\[\033[37m\]]\[\033[0m\]$(__git_ps1 " (%s)")\$ '
-
-        # quemu on ssh.
-        # export QEMU_OPTS='-nographic'
 
         # Color man
         export LESS_TERMCAP_mb=$'\e[1;32m'

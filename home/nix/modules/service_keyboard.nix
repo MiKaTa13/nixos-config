@@ -68,30 +68,28 @@
         done
     '';
 in {
-  systemd.user.services = {
-    keyboard-led = {
-      serviceConfig = {
-        NoNewPrivileges = true;
-        PrivateTmp = true;
-        ProtectSystem = "strict";
-        ProtectHome = true;
-      };
+  systemd.user.services.keyboard-led = {
+    serviceConfig = {
+      NoNewPrivileges = true;
+      PrivateTmp = true;
+      ProtectSystem = "strict";
+      ProtectHome = true;
+    };
 
-      Unit = {
-        Description = "Set keyboard led";
-      };
+    Unit = {
+      Description = "Set keyboard led";
+    };
 
-      Service = {
-        Type = "simple";
-        ExecStart = "${ledManager}/bin/led_manager";
-        UMask = "0022";
-        User = "nix";
-        Group = "users";
-      };
+    Service = {
+      Type = "simple";
+      ExecStart = "${ledManager}/bin/led_manager";
+      UMask = "0022";
+      User = "nix";
+      Group = "users";
+    };
 
-      Install = {
-        WantedBy = ["graphical-session.target"];
-      };
+    Install = {
+      WantedBy = ["graphical-session.target"];
     };
   };
 }

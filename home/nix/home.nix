@@ -20,13 +20,12 @@
 
   imports = [
     agenix.homeManagerModules.default
-    ./modules/slop.nix
     ./modules/agenix.nix
     ./modules/alacritty.nix
     ./modules/dmenu.nix
     ./modules/dwmblocks.nix
     ./modules/dwm.nix
-    ./modules/git-config.nix
+    ./modules/git_config.nix
     ./modules/mpv.nix
     ./modules/msmtp.nix
     ./modules/neomutt.nix
@@ -39,19 +38,21 @@
     ./modules/qutebrowser.nix
     ./modules/ranger.nix
     ./modules/rclone.nix
-    ./modules/shell.nix
+    ./modules/bash_shell.nix
+    ./modules/slop.nix
     ./modules/st.nix
     ./modules/tmux.nix
     ./modules/vim.nix
-    ./modules/wallpaper_service.nix
     ./modules/xsession.nix
     ./modules/zathura.nix
 
-    # services
+    # sersices, timers
     ./modules/service_gpg.nix
     ./modules/service_keyboard.nix
+    ./modules/service_offlineimap.nix
     ./modules/service_picom.nix
     ./modules/service_redshift.nix
+    ./modules/service_wallpaper.nix
   ];
 
   # Packages instaled by home-manager.
