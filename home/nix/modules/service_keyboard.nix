@@ -69,13 +69,6 @@
     '';
 in {
   systemd.user.services.keyboard-led = {
-    serviceConfig = {
-      NoNewPrivileges = true;
-      PrivateTmp = true;
-      ProtectSystem = "strict";
-      ProtectHome = true;
-    };
-
     Unit = {
       Description = "Set keyboard led";
     };
