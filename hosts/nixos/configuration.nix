@@ -8,16 +8,16 @@
 }: {
   imports = [
     ./hardware-configuration.nix # Include the results of the hardware scan.
-    ./os_modules/nix-cache.nix
     ./os_modules/display-manager.nix
-    ./os_modules/network.nix
-    ./os_modules/sshd-config.nix
-    ./os_modules/printing.nix
-    ./os_modules/user-nix.nix
-    ./os_modules/nvidia-gpu.nix
-    ./os_modules/services.nix
     ./os_modules/firejail.nix
-    ./os_modules/keyboard-led.nix
+    # ./os_modules/keyboard-led.nix
+    ./os_modules/network.nix
+    ./os_modules/nix-cache.nix
+    ./os_modules/nvidia-gpu.nix
+    ./os_modules/printing.nix
+    ./os_modules/services.nix
+    ./os_modules/sshd-config.nix
+    ./os_modules/user-nix.nix
   ];
 
   # rtkit (optional, recommended) allows Pipewire to use the realtime scheduler for increased performance.

@@ -1,8 +1,4 @@
-{
-  # config,
-  pkgs,
-  ...
-}:
+{pkgs, ...}:
 # systemctl status llama_cpp.service
 # journalctl -u llama_cpp.service -f
 # systemd-analyze security llama.cpp

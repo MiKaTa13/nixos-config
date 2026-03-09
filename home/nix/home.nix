@@ -21,7 +21,8 @@
   imports = [
     agenix.homeManagerModules.default
     ./modules/agenix.nix
-    ./modules/alacritty.nix
+    ./modules/bash_shell.nix
+    ./modules/delta_diff.nix
     ./modules/dmenu.nix
     ./modules/dwmblocks.nix
     ./modules/dwm.nix
@@ -38,14 +39,12 @@
     ./modules/qutebrowser.nix
     ./modules/ranger.nix
     ./modules/rclone.nix
-    ./modules/bash_shell.nix
     ./modules/slop.nix
     ./modules/st.nix
     ./modules/tmux.nix
     ./modules/vim.nix
     ./modules/xsession.nix
     ./modules/zathura.nix
-
     # sersices, timers
     ./modules/service_gpg.nix
     ./modules/service_keyboard.nix
