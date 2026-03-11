@@ -1,8 +1,7 @@
-# Network setup.
 {...}: {
   networking = {
-    enableIPv6 = true; # disable IPv6
-    hostName = "nixos"; # Define your hostname.
+    enableIPv6 = true;
+    hostName = "nixos";
     # Wake-on-lan.
     # interfaces = {
     #   "enp3s0".wakeOnLan = {
@@ -12,9 +11,8 @@
     # };
     firewall = {
       enable = true;
-      allowedTCPPorts = [22 80 443];
-      #allowedTCPPorts = [ ]; # Open ports in the firewall.
-      #allowedUDPPorts = [ ];
+      # allowedTCPPorts = [22 80 443];
+      # allowedUDPPorts = [ ];
       extraCommands = ''
         # Set default policies to DROP
         iptables -P INPUT DROP
@@ -48,8 +46,8 @@
         iptables -A OUTPUT -p tcp --dport 25 -m state --state NEW -j ACCEPT
 
         # Allow outbound IMAP/IMAPS (if needed)
-        iptables -A OUTPUT -p tcp --dport 143 -m state --state NEW -j ACCEPT
-        iptables -A OUTPUT -p tcp --dport 993 -m state --state NEW -j ACCEPT
+        #iptables -A OUTPUT -p tcp --dport 143 -m state --state NEW -j ACCEPT
+        #iptables -A OUTPUT -p tcp --dport 993 -m state --state NEW -j ACCEPT
 
         # Allow outbound SSH (if you connect to remote servers)
         iptables -A OUTPUT -p tcp --dport 22 -m state --state NEW -j ACCEPT

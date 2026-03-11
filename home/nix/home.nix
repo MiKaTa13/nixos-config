@@ -31,7 +31,6 @@
     ./modules/msmtp.nix
     ./modules/neomutt.nix
     ./modules/neovim.nix
-    ./modules/nnn.nix
     ./modules/notmuch.nix
     ./modules/offlineimap.nix
     ./modules/ollama.nix

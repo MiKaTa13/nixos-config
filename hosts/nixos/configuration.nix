@@ -17,6 +17,7 @@
     ./os_modules/printing.nix
     ./os_modules/services.nix
     ./os_modules/sshd-config.nix
+    ./os_modules/xserver.nix
     ./os_modules/user-nix.nix
   ];
 
