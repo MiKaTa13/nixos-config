@@ -1,11 +1,14 @@
 {pkgs, ...}: let
   my-st = pkgs.st.overrideAttrs (oldAttrs: {
-    src = ./sources/st; # local source
-    # src = pkgs.fetchgit { # remote git source
-    #   url = "https://git.suckless.org/st";
-    #   rev = "688f70add0d1da8a416bf7df763328d694a24a3a"; # commit hash.
-    #   hash = "sha256-PUMhcvPy63G9qQ3S8kTBLXf4RmPlPDRA61c35tspBu4=";
-    # };
+    # local source
+    # src = ./sources/st;
+
+    # remote git source
+    src = pkgs.fetchgit {
+      url = "https://git.suckless.org/st";
+      rev = "688f70add0d1da8a416bf7df763328d694a24a3a"; # commit hash.
+      hash = "sha256-PUMhcvPy63G9qQ3S8kTBLXf4RmPlPDRA61c35tspBu4=";
+    };
 
     patches =
       (oldAttrs.patches or [])
@@ -39,9 +42,5 @@
       ];
   });
 in {
-  home = {
-    packages = [
-      my-st
-    ];
-  };
+  home.packages = [my-st];
 }

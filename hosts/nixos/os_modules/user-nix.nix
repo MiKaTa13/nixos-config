@@ -16,6 +16,7 @@
         "audio"
         "input"
         "tty"
+        "cdrom"
       ];
     };
   };

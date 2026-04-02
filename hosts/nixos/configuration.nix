@@ -10,15 +10,14 @@
     ./hardware-configuration.nix # Include the results of the hardware scan.
     ./os_modules/display-manager.nix
     ./os_modules/firejail.nix
-    # ./os_modules/keyboard-led.nix
     ./os_modules/network.nix
     ./os_modules/nix-cache.nix
     ./os_modules/nvidia-gpu.nix
     ./os_modules/printing.nix
     ./os_modules/services.nix
     ./os_modules/sshd-config.nix
-    ./os_modules/xserver.nix
     ./os_modules/user-nix.nix
+    ./os_modules/xserver.nix
   ];
 
   # rtkit (optional, recommended) allows Pipewire to use the realtime scheduler for increased performance.
@@ -44,23 +43,24 @@
     };
   };
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot = {
+    # Use the systemd-boot EFI boot loader.
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    # latest kernel
+    kernelPackages = pkgs.linuxPackages_latest;
+
+    # Load temperature module.
+    kernelModules = ["k10temp"];
+
+    # clean /tmp at boot
+    tmp.cleanOnBoot = true;
+
+    # disable IPv6 in the kernel (0=enabled)
+    kernelParams = ["ipv6.disable=0"];
   };
-
-  # latest kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  # Load temperature module.
-  boot.kernelModules = ["k10temp"];
-
-  # clean /tmp at boot
-  boot.tmp.cleanOnBoot = true;
-
-  # disable IPv6 in the kernel (0=enabled)
-  boot.kernelParams = ["ipv6.disable=0"];
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";

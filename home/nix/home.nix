@@ -32,11 +32,11 @@
     ./modules/neomutt.nix
     ./modules/neovim.nix
     ./modules/notmuch.nix
+    ./modules/nnn.nix
     ./modules/offlineimap.nix
     ./modules/ollama.nix
     ./modules/python313-libs.nix
     ./modules/qutebrowser.nix
-    ./modules/ranger.nix
     ./modules/rclone.nix
     ./modules/slop.nix
     ./modules/st.nix
@@ -78,16 +78,15 @@
       fzf
       g810-led # Linux LED controller for some Logitech G Keyboards
       gcc
-      ghostty
       gimp3
       gitleaks
       gnumake
       htop
       imagemagick
       iotop
+      irssi
       isort
       libjpeg
-      lua-language-server
       lua-language-server
       nerd-fonts.fira-code
       newsboat
@@ -109,7 +108,6 @@
       stylua
       tmux
       tree
-      trufflehog # scan for GIT secrets
       unzip
       urlscan # neomutt
       w3m
