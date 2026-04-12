@@ -6,7 +6,7 @@
     # remote git source
     src = pkgs.fetchgit {
       url = "https://git.suckless.org/dwm";
-      rev = "44dbc6809d05b8f2addc483f882e670db0b6b8e9"; # commit hash.
+      rev = "44dbc6809d05b8f2addc483f882e670db0b6b8e9"; # git ls-remote https://git.suckless.org/dwm HEAD
       hash = "sha256-+arHEGdhEL9fWn7eYE+A82jc/jsje8e2hgRDbJRK8Pk=";
     };
     patches =

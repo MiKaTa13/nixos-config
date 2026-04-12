@@ -29,26 +29,26 @@
   in {
     nixosConfigurations = {
       ${hostname} = nixpkgs.lib.nixosSystem {
-        system = system;
+        inherit system;
         specialArgs = {
           inherit username;
         };
         modules = [
           ./hosts/${hostname}/configuration.nix
           home-manager.nixosModules.home-manager
+          agenix.nixosModules.default
           {
             home-manager = {
-              # Enable home-manager integration in NixOS config
-              useGlobalPkgs = true;
-              useUserPackages = true;
               users = {
                 ${username} = import ./home/${username}/home.nix;
               };
-              backupFileExtension = "backup"; # move existing files by appending the "backup".
+              # Enable home-manager integration in NixOS config
+              useGlobalPkgs = true;
+              useUserPackages = true;
+
               extraSpecialArgs = {
-                inherit username agenix;
-                inherit pkgs-unstable; # Allow use unstable packages in home.
-                secretPath = "/nix-config/home/nix/secrets"; # Path to age encripted files.
+                inherit username agenix pkgs-unstable;
+                secretPath = "/nix-config/home/${username}/secrets"; # Path to age encripted files.
               };
             };
           }

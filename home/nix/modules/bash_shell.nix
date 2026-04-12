@@ -13,6 +13,7 @@
         l = "ls";
         ll = "ls -l";
         la = "ls -la";
+        n = "nnn -d";
         ".." = "cd ..";
         cp = "cp -v";
         df = "df -h";

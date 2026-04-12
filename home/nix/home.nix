@@ -2,14 +2,17 @@
   pkgs,
   pkgs-unstable,
   agenix,
+  username,
   ...
 }: {
   # home setup
   home = {
-    username = "nix"; # Linux username
-    homeDirectory = "/home/nix"; # Home directory path
+    inherit username;
+    homeDirectory = "/home/${username}"; # Home directory path
     stateVersion = "25.05";
   };
+
+  programs.home-manager.enable = true;
 
   # The "sd-switch" option is a tool that automatically starts,
   # stops, and reloads systemd services
@@ -25,6 +28,7 @@
     ./modules/delta_diff.nix
     ./modules/dmenu.nix
     ./modules/dwmblocks.nix
+    ./modules/fzf.nix
     ./modules/dwm.nix
     ./modules/git_config.nix
     ./modules/mpv.nix
@@ -44,7 +48,7 @@
     ./modules/vim.nix
     ./modules/xsession.nix
     ./modules/zathura.nix
-    # sersices, timers
+    # services, timers
     ./modules/service_gpg.nix
     ./modules/service_keyboard.nix
     ./modules/service_offlineimap.nix
@@ -53,18 +57,16 @@
     ./modules/service_wallpaper.nix
   ];
 
-  # Packages instaled by home-manager.
+  # Packages installed by home-manager.
   home.packages =
     (with pkgs; [
       age
-      agenix.packages.x86_64-linux.default
-      alejandra
+      agenix.packages.${pkgs.system}.default
       alejandra
       aria2
       bash-language-server
       bat
       bc
-      black
       black
       btop
       clang-tools
@@ -74,13 +76,9 @@
       feh
       ffmpeg-full
       file
-      fira-code
-      fzf
       g810-led # Linux LED controller for some Logitech G Keyboards
-      gcc
       gimp3
       gitleaks
-      gnumake
       htop
       imagemagick
       iotop
@@ -99,19 +97,16 @@
       pass
       prettier
       pyright
-      qemu_full
       remind
       ripgrep
       ruff
       shfmt
-      stylua
       stylua
       tmux
       tree
       unzip
       urlscan # neomutt
       w3m
-      wireshark
       wyrd # Text-based front-end to Remind
       xclip
       xorg.libxcb # qutebrowser
@@ -119,16 +114,8 @@
       yubikey-manager
       zip
 
-      ## Note About Using home-manager Command ##
-      # Even with home-manager in your PATH,
-      # when using the NixOS module integration:
       # Don't use home-manager switch - it will conflict
-      # Do use sudo nixos-rebuild switch for applying changes
-      # The home-manager command is mainly useful for:
-      # home-manager generations - viewing past generations
-      # home-manager packages - listing packages
-      # home-manager news - viewing news
-      home-manager
+      # home-manager
     ])
     ++ (with pkgs-unstable; [
       # list of unstable packages go here

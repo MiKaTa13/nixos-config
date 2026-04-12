@@ -1,6 +1,10 @@
 {pkgs, ...}: let
   my-dmenu = pkgs.dmenu.overrideAttrs {
-    src = ./sources/dmenu; # or use fetchFromGitHub
+    src = pkgs.fetchgit {
+      url = "https://git.suckless.org/dmenu";
+      rev = "7175c4880bac3d2a2d4a6262b59193f0a38e2fdb"; #  git ls-remote https://git.suckless.org/dmenu HEAD
+      hash = "sha256-4B+0oDQPeCm4ljjCrpeiz0pFGKZlU9sXneVplkNkI/0=";
+    };
     patches = [
       # ./sources/patches/dwm/dwm-custom.diff
       (pkgs.fetchpatch {

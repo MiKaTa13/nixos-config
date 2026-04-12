@@ -90,13 +90,17 @@
   # LIST PACKAGES INSTALLED IN SYSTEM PROFILE.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    wget
-    lm_sensors
-    xterm
-    ly
     cmatrix
-    pinentry-tty
     g810-led # Linux LED controller for some Logitech G Keyboards
+    gcc
+    gnumake
+    lm_sensors
+    ly
+    pinentry-tty
+    qemu_full
+    wget
+    wireshark
+    xterm
   ];
 
   # Config path

@@ -1,12 +1,12 @@
 {pkgs, ...}: let
   my-st = pkgs.st.overrideAttrs (oldAttrs: {
     # local source
-    # src = ./sources/st;
+    # src = ./path-to-sources/st;
 
     # remote git source
     src = pkgs.fetchgit {
       url = "https://git.suckless.org/st";
-      rev = "688f70add0d1da8a416bf7df763328d694a24a3a"; # commit hash.
+      rev = "688f70add0d1da8a416bf7df763328d694a24a3a"; # git ls-remote https://git.suckless.org/st HEAD
       hash = "sha256-PUMhcvPy63G9qQ3S8kTBLXf4RmPlPDRA61c35tspBu4=";
     };
 
