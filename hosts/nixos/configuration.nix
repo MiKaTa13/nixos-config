@@ -43,14 +43,17 @@
     };
   };
 
+  # KERNEL
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_hardened;
+  # boot.kernelPackages = pkgs.linuxPackages_xanmod;
+
   boot = {
     # Use the systemd-boot EFI boot loader.
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    # latest kernel
-    kernelPackages = pkgs.linuxPackages_latest;
 
     # Load temperature module.
     kernelModules = ["k10temp"];
@@ -147,4 +150,8 @@
 
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05"; # Did you read the comment?
+
+  # Automatic Upgrades
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
 }

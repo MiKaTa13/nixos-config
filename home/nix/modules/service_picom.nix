@@ -25,7 +25,7 @@
         xrender-sync-fence = true;
         log-level = "warn";
       };
-      backend = "xrender"; # try "glx" if xrender doesn't help
+      backend = "xrender"; # try "glx" if xrender doesn't help.
       vSync = true;
       shadow = true;
       shadowOpacity = 0.96;

@@ -2,7 +2,6 @@
   services.redshift = {
     enable = true;
     settings = {
-      # Example of a [redshift] section with keys/values
       redshift = {
         adjustment-method = "randr";
         gamma-day = 0.8;

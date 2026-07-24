@@ -19,9 +19,9 @@
       ++ [
         pkgs.glm
         pkgs.glew
-        pkgs.xorg.libX11
-        pkgs.xorg.libXrender
-        pkgs.xorg.libXext
+        pkgs.libX11
+        pkgs.libXrender
+        pkgs.libXext
       ];
   });
 in {

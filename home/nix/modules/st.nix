@@ -1,8 +1,5 @@
 {pkgs, ...}: let
   my-st = pkgs.st.overrideAttrs (oldAttrs: {
-    # local source
-    # src = ./path-to-sources/st;
-
     # remote git source
     src = pkgs.fetchgit {
       url = "https://git.suckless.org/st";

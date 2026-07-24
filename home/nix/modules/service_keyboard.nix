@@ -82,6 +82,7 @@ in {
     };
 
     Service = {
+      Environment = "DISPLAY=:0";
       Type = "simple";
       ExecStart = "${ledManager}/bin/led_manager";
       UMask = "0022";

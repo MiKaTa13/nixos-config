@@ -60,6 +60,7 @@
   # Packages installed by home-manager.
   home.packages =
     (with pkgs; [
+      yubioath-flutter
       age
       agenix.packages.${pkgs.system}.default
       alejandra
@@ -109,7 +110,7 @@
       w3m
       wyrd # Text-based front-end to Remind
       xclip
-      xorg.libxcb # qutebrowser
+      libxcb # qutebrowser
       xprintidle
       yubikey-manager
       zip

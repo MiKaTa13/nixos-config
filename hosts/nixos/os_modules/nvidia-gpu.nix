@@ -9,6 +9,7 @@
   # allow specific non-free packages
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
+      "nvidia-kernel-modules"
       "nvidia-x11"
       "nvidia-settings"
       "nvidia-persistenced"
